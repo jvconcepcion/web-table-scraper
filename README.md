@@ -2,7 +2,7 @@
 [circleci-url]: https://circleci.com/gh/nestjs/nest
 
 ## Description
-This scraper is created using Nest JS [Nest](https://github.com/nestjs/nest) and is intended to use to scrape table dom within a website.
+This scraper is created using [Nest JS](https://github.com/nestjs/nest) and is intended to use to scrape table dom within a website.
 
 ## Installation
 
@@ -16,7 +16,7 @@ $ npm install
 $ npm run build
 
 # watch mdoe
-$ npm run build:Watch
+$ npm run build:watch
 ```
 
 ## Running the app
