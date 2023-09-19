@@ -12,7 +12,13 @@ export class ScraperService {
     rowData: string,
   ): Promise<ScrapeSiteTableProps[]> {
     try {
-      const response = await axios.get(url);
+      const response = await axios.get(url,{
+        headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
+        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+        'Accept-Encoding': 'gzip, deflate, br'
+      }});
       const html = response.data;
       
       const $ = cheerio.load(html);
@@ -28,7 +34,8 @@ export class ScraperService {
       });
       return site
     } catch (error) {
-      throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR);
+      return error
+      // throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
 }
