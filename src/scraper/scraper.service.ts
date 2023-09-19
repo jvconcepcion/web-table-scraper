@@ -20,7 +20,7 @@ export class ScraperService {
         'Accept-Encoding': 'gzip, deflate, br'
       }});
       const html = response.data;
-      
+      console.log(html)
       const $ = cheerio.load(html);
       const site = [];
 
